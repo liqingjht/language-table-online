@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Language Table</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/flat-ui.min.css" rel="stylesheet">
+    <link href="css/jqueryFileTree.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container" style="height:100%;">
+        <div class="info-div">
+            <div class="info-body">
+                <div id="alert-bar" style="visibility:hidden;">
+                    <span id="alert-row"></span>
+                </div>
+				<div id="ftp-body">
+					<div class="switch-box is-info">
+						<input id="to-upload" class="switch-box-input" type="checkbox" style="display:none" checked/>
+						<label for="to-upload" class="switch-box-slider"></label>
+						<label for="to-upload" class="switch-box-label">Upload to ftp://[251]/<span id="ftp-path"></span></label>
+					</div>
+				</div>
+                <div id="image">
+                    <span>Image: </span>
+                    <span id="image-val"></span>
+                </div>
+                <div id="updown"><img src="/image/updown.svg"></div>
+                <div id="language">
+                    <span>Language: </span>
+                    <span id="lang-val"></span>
+                </div>
+				<div id="start">
+					<input type="button" class="btn btn-inverse btn-wide" id="startBtn" value="Start">
+				</div>
+				<div id="get-info">
+				</div>
+            </div>
+        </div>
+        <div id="containerTree"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/flat-ui.min.js"></script>
+    <script src="js/jqueryFileTree.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

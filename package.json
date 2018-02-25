@@ -1,0 +1,14 @@
+{
+    "name": "Language-Table-Online",
+    "version": "1.0.1",
+    "author": "defeng.liu",
+    "description": "Generate language table just select files from samba server",
+    "main": "server.js",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "express": "^4.15.3",
+        "node-schedule": "^1.2.3",
+        "ftp": "^0.3.10"
+    }
+}

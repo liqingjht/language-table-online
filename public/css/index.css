@@ -1,0 +1,112 @@
+.info-div {
+    height: 300px;
+    float: left;
+    width: 430px;
+    margin-left: 3%;
+}
+
+.info-body {
+    position: fixed;
+}
+
+.info-body div {
+    min-height: 35px;
+    margin: 30px 0px 20px 0px;
+    width: 400px;
+    word-break: break-all;
+}
+
+#start {
+    text-align: center;
+    margin-top: 60px;
+}
+
+#image,
+#language {
+    border-bottom: solid;
+}
+
+#updown {
+    text-align: center;
+}
+
+#updown img {
+    cursor: pointer;
+}
+
+#containerTree {
+    float: left;
+    margin-left: 10%;
+}
+
+.main-container {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+#alert-bar {
+    height: 80px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#get-info {
+    font-size: 17px;
+}
+
+.switch-box .switch-box-slider {
+    position: relative;
+    display: inline-block;
+    height: 8px;
+    width: 32px;
+    background: #d5d5d5;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.switch-box .switch-box-slider:after {
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #eeeeee;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    content: '';
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.switch-box .switch-box-input~.switch-box-label {
+    margin-left: 8px;
+}
+
+.switch-box .switch-box-input:checked~.switch-box-slider:after {
+    left: 16px;
+}
+
+.switch-box.is-info .switch-box-input:checked:not(:disabled)~.switch-box-slider {
+    background: #5faee3;
+}
+
+.switch-box.is-info .switch-box-input:checked:not(:disabled)~.switch-box-slider:after {
+    background: #3498db;
+}
+
+.switch-box-label {
+    margin-left: 15px;
+    font-size: 17px;
+    position: relative;
+    top: -5px;
+}
+
+#ftp-path {
+    font-size: 19px;
+    color: #5faee3;
+}
