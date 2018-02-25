@@ -1,7 +1,7 @@
 {
-    "name": "Language-Table-Online",
+    "name": "language-table-online",
     "version": "1.0.1",
-    "author": "defeng.liu",
+    "author": "liqingjht",
     "description": "Generate language table just select files from samba server",
     "main": "server.js",
     "license": "MIT",
