@@ -98,6 +98,12 @@ major=`echo ${version:0:2}`
 
 major=`echo ${major:1:1}`
 
+isUTF16=`file $fileinfo |grep -c UTF-16`
+
+if [ $isUTF16 -eq 1 ]; then
+	iconv -f UTF-16 -t UTF-8 $fileinfo -o $fileinfo
+fi
+
 sed -i "1s/\[Major.*\]/\[Major$major\]/" $fileinfo
 
 sed -i "2s/file=.*/file=$imgName/" $fileinfo
@@ -110,6 +116,17 @@ cat $fileinfo |tr -d '\r' > ./fileinfoTmp.txt
 
 mv ./fileinfoTmp.txt $fileinfo
 
+cp $fileinfo $fileinfo-utf8
+
+iconv -f UTF-8 -t UTF-16 $fileinfo -o $fileinfo
+
+if [ -r stringtable.dat ]; then
+	sIsUTF16=`file stringtable.dat |grep -c UTF-16`
+	if [ $sIsUTF16 -eq 0 ]; then
+		iconv -f UTF-8 -t UTF-16 stringtable.dat -o stringtable.dat
+	fi
+fi
+
 langVersion="`find ./ -name "*Eng-Language-table" | egrep 'v([0-9]{1,3}\.){3}[0-9]{1,3}' -i -o |head -1`"
 
 if [ $langVersion = "" ]; then
@@ -118,9 +135,11 @@ fi
 
 echo "---fileinfo begin---"
 
-cat $fileinfo | head -4
+cat $fileinfo-utf8 | head -4
 
 echo "---fileinfo end---"
+
+rm -f $fileinfo-utf8
 
 zipName=`echo "${project}-language-table-${langVersion}-for-FW-${version}.zip"`
 
